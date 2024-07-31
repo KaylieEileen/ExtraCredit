@@ -1,0 +1,20 @@
+```{r}
+is_prime <- function(n) {
+  if (n <= 1) return(FALSE)
+  if (n == 2) return(TRUE)  # 2 is the only even prime number
+  if (n %% 2 == 0) return(FALSE)  # Eliminate even numbers
+  for (i in 3:sqrt(n)) {
+    if (n %% i == 0) return(FALSE)
+  }
+  return(TRUE)
+}
+```
+
+```{r}
+count_primes <- sum(sapply(1:99, is_prime))
+```
+
+```{r}
+print(count_primes)
+```
+
